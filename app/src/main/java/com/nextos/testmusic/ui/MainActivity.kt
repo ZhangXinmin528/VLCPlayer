@@ -126,6 +126,7 @@ open class MainActivity : BaseActivity(), OnClickListener, PlaybackService.Callb
                 } else {
                     //do something
                 }
+
             }
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
