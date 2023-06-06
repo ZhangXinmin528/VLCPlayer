@@ -1,0 +1,56 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.nextos.lib.core'
+    compileSdkVersion build_versions.compile_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    api deps.core_ktx
+    //androidx
+    api deps.app_compat
+    api deps.activity.activity_ktx
+
+    //lifecycle
+    api deps.lifecycle.runtime
+    api deps.lifecycle.viewmodel_ktx
+    implementation project(path: ':lib.util')
+//    implementation deps.lifecycle.livedata_ktx
+    annotationProcessor deps.lifecycle.compiler
+
+    implementation deps.recyclerview
+    //multidex
+    implementation deps.multidex
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+}

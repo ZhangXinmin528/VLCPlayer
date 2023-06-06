@@ -1,0 +1,56 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.nextos.module.playermodule'
+    compileSdkVersion build_versions.compile_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0.1"
+        buildConfigField "String", "APP_ID", "\"${rootProject.ext.appId}\""
+    }
+    android.libraryVariants.all { variant ->
+        variant.outputs.all {
+            def fileName = "com.nextos.player.${defaultConfig.versionName}.${defaultConfig.versionCode}-${buildType.name}.aar"
+            outputFileName = fileName
+        }
+    }
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+
+}
+
+dependencies {
+
+    implementation deps.app_compat
+    implementation deps.core_ktx
+    implementation deps.multidex
+    implementation deps.preference.runtime
+    implementation deps.preference.ktx
+    implementation deps.media
+    implementation deps.constraint_layout
+    implementation deps.material
+
+    implementation deps.coroutines.android
+    implementation deps.coroutines.core
+    implementation deps.lifecycle.service
+    implementation deps.lifecycle.process
+
+    api deps.glide.runtime
+    kapt deps.glide.compiler
+
+    implementation "androidx.window:window:1.0.0"
+
+    implementation "com.nextos.vlc:libvlc-all:ywxt.1.0.3-eap1"
+
+
+}

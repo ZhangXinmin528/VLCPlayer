@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/color_config_dark_gray_3</color>
+    <color name="colorPrimaryDark">@color/color_config_dark_gray_1</color>
+    <color name="colorAccent">#83BAFF</color>
+
+    <color name="colorWhite">@color/color_config_black_pure</color>
+    <color name="colorBlack">@color/color_config_white_pure</color>
+    <color name="colorBlue">#83BAFF</color>
+    <color name="colorBlueDark">#529FFF</color>
+    <color name="colorRed">#ff0000</color>
+    <color name="colorOrange">#6C5D2B</color>
+    <color name="colorOrangeLite">#635D4C</color>
+
+    <!--background-->
+    <color name="color_main_bg">@color/color_config_dark_gray_4</color>
+    <color name="color_dark_bg">@color/color_config_dark_gray_2</color>
+    <color name="color_light_bg">@color/color_config_dark_gray_6</color>
+    <color name="color_navigation_bg">@color/color_config_dark_gray_4</color>
+
+    <!--list-->
+    <color name="color_list_title">@color/color_text_black</color>
+    <color name="color_list_content">@color/color_text_black</color>
+    <color name="color_list_small">@color/color_text_gray</color>
+    <color name="color_list_light">@color/color_text_white</color>
+    <color name="color_list_item_bg">@color/color_light_bg</color>
+
+    <!--text color-->
+    <color name="color_text_gray">@color/color_config_light_gray_7</color>
+    <color name="color_text_black">@color/color_config_light_gray_8</color>
+    <color name="color_text_white">@color/color_config_white_pure</color>
+    <color name="color_text_tag">#ffffff</color>
+
+    <!--Toolbar-->
+    <color name="color_toolbar_primary">@color/colorPrimaryDark</color>
+    <color name="color_toolbar_dark">@color/color_config_dark_gray_4</color>
+    <color name="color_toolbar_light">@color/color_light_bg</color>
+
+    <!--status bar-->
+    <color name="color_status_bar">@color/color_main_bg</color>
+
+    <!--divider line-->
+    <color name="color_divider_line">@color/color_main_bg</color>
+
+    <!--Button-->
+    <color name="color_btn_pressed">@color/colorBlue</color>
+    <color name="color_btn_disabled">@color/colorBlueDark</color>
+
+</resources>

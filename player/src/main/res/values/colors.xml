@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="player_purple_200">#FFBB86FC</color>
+    <color name="player_purple_500">#FF6200EE</color>
+    <color name="player_purple_700">#FF3700B3</color>
+    <color name="player_teal_200">#FF03DAC5</color>
+    <color name="player_teal_700">#FF018786</color>
+
+    <color name="player_black">#000000</color>
+    <color name="player_white">#ffffff</color>
+    <color name="player_red">#bb0000</color>
+
+    <!--
+        Material color swatches
+        The main color is always xxx500
+    -->
+    <color name="player_orange50">#fff3e0</color>
+    <color name="player_orange100">#ffdfae</color>
+    <color name="player_orange200">#ffca7d</color>
+    <color name="player_orange300">#ffb54c</color>
+    <color name="player_orange400">#ffa11a</color>
+    <color name="player_orange500">#FF8800</color>
+    <color name="player_orange600">#ff7d00</color>
+    <color name="player_orange700">#ff7200</color>
+    <color name="player_orange800">#ff610a</color>
+    <color name="player_orange900">#ff5014</color>
+
+    <color name="player_red500transparent">#b4ff0000</color>
+    <color name="player_orange500transparent">#b4ff8800</color>
+    <color name="player_orange500focus">#86ff8800</color>
+    <color name="player_orange200transparent">#64ffca7d</color>
+
+    <color name="player_green50">#bdeadd</color>
+    <color name="player_green100">#a7e3d1</color>
+    <color name="player_green200">#91dcc5</color>
+    <color name="player_green300">#7cd5ba</color>
+    <color name="player_green400">#66cfaf</color>
+    <color name="player_green500">#50c8a3</color>
+    <color name="player_green600">#47b99b</color>
+    <color name="player_green700">#3ea992</color>
+    <color name="player_green800">#359989</color>
+    <color name="player_green900">#2b8a81</color>
+
+    <color name="player_green500transparent">#b450c8a3</color>
+    <color name="player_green500focus">#8650c8a3</color>
+    <color name="player_green200transparent">#6491dcc5</color>
+
+    <color name="player_green_800_transparent_10">#1a359989</color>
+    <color name="player_green_800_transparent_20">#33359989</color>
+    <color name="player_green_500_transparent_20">#3350c8a3</color>
+
+    <color name="player_grey50">#fafafa</color>
+    <color name="player_grey100">#f5f5f5</color>
+    <color name="player_grey200">#eeeeee</color>
+    <color name="player_grey300">#e0e0e0</color>
+    <color name="player_grey400">#bdbdbd</color>
+    <color name="player_grey500">#9e9e9e</color>
+    <color name="player_grey600">#757575</color>
+    <color name="player_grey700">#616161</color>
+    <color name="player_grey800">#424242</color>
+    <color name="player_grey850">#323232</color>
+    <color name="player_grey875">#2a2a2a</color>
+    <color name="player_grey900">#212121</color>
+
+
+    <color name="player_dark_background">#131313</color>
+
+    <color name="player_playerbackground">#c0141414</color>
+    <color name="player_playerbackground_invert">#c0ebebeb</color>
+    <color name="player_black_more_transparent">#88000000</color>
+    <color name="player_status_bar_transparency">#cb000000</color>
+
+    <color name="player_grey200transparent">#33eeeeee</color>
+
+    <color name="player_whitetransparent_b9">#b9ffffff</color>
+    <color name="player_whitetransparent_ea">#eaffffff</color>
+
+    <color name="player_grey300transparent">#80e0e0e0</color>
+    <color name="player_grey50transparent">#b9fafafa</color>
+    <color name="player_grey50transparent_ea">#eafafafa</color>
+    <color name="player_grey400transparent">#80bdbdbd</color>
+    <color name="player_grey600transparent">#80757575</color>
+    <color name="player_grey900transparent_bb">#bb212121</color>
+    <color name="player_grey900transparent_dd">#dd212121</color>
+    <color name="player_grey900transparent">#80212121</color>
+    <color name="player_grey200_transparent_20">#33eeeeee</color>
+
+    <color name="player_mini_player_dark">#121212</color>
+    <color name="player_mini_visualizer">#BF141414</color>
+
+    <color name="player_blacktransparent">#b4000000</color>
+    <color name="player_whitetransparent">#b4ffffff</color>
+    <color name="player_white_less_transparent">#ccffffff</color>
+    <color name="player_ripple_white">#44ffffff</color>
+    <color name="player_white_more_transparent">#33ffffff</color>
+    <color name="player_white_audio_player_transparent">#aaffffff</color>
+    <color name="player_black_audio_player_transparent">#ee2a2a2a</color>
+    <color name="player_transparent">#00000000</color>
+    <color name="player_white_transparent">#01FFFFFF</color>
+
+    <color name="player_white_transparent_10">#1affffff</color>
+    <color name="player_white_transparent_15">#26ffffff</color>
+    <color name="player_white_transparent_20">#33ffffff</color>
+    <color name="player_white_transparent_30">#4dffffff</color>
+    <color name="player_white_transparent_50">#80ffffff</color>
+    <color name="player_white_transparent_60">#99ffffff</color>
+    <color name="player_white_transparent_75">#bfffffff</color>
+    <color name="player_white_transparent_80">#ccffffff</color>
+    <color name="player_white_transparent_90">#E6ffffff</color>
+    <color name="player_white_transparent_95">#F2ffffff</color>
+
+    <color name="player_black_transparent_10">#1a000000</color>
+    <color name="player_black_transparent_20">#33000000</color>
+    <color name="player_black_transparent_30">#4d000000</color>
+    <color name="player_black_transparent_50">#80000000</color>
+    <color name="player_black_transparent_60">#99000000</color>
+    <color name="player_black_transparent_75">#BF000000</color>
+    <color name="player_black_transparent_80">#cc000000</color>
+    <color name="player_black_transparent_90">#E6000000</color>
+
+    <color name="player_orange_800_transparent_10">#1aff610a</color>
+    <color name="player_orange_800_transparent_20">#33ff610a</color>
+    <color name="player_orange_500_transparent_20">#33FF8800</color>
+
+    <color name="player_tv_bg">#51738e</color>
+    <color name="player_tv_card_content">#51738e</color>
+    <color name="player_tv_card_content_dark">#33757575</color>
+    <color name="player_tv_card_content_darker">#00000000</color>
+
+    <!--test with onboarding colors-->
+    <!--<color name="tv_bg">#1c313a</color>-->
+    <!--<color name="tv_card_content">#396375</color>-->
+    <color name="player_onboarding_grey">#011422</color>
+    <color name="player_onboarding_grey_transparent_20">#33011422</color>
+    <color name="player_onboarding_grey_transparent_75">#BF011422</color>
+    <color name="player_material_blue">#2196f3</color>
+    <color name="player_material_pink">#e91e63</color>
+    <color name="player_header_blue">#1346af</color>
+    <color name="player_header_search_blue">#1346af</color>
+
+    <color name="player_transparent5">#11000000</color>
+
+    <color name="player_seek_blue">#1988FF</color>
+    <color name="player_grey73">#737373</color>
+    <color name="player_seek_volume">#666666</color>
+    <color name="player_track_bg">#A0A1A799</color>
+
+    <color name="player_list_text_normal">#ffffff</color>
+    <color name="player_list_text_focused">#000000</color>
+    <color name="player_list_60_white">#99FFFFFF</color>
+    <color name="player_list_60_black">#99000000</color>
+    <color name="player_list_80_f2">#CCF2F2F2</color>
+    <color name="player_audio_card_shadow">#19000000</color>
+    <color name="player_audio_pic_card_shadow">#19ABABAB</color>
+    <color name="player_theme_cd">#414141</color>
+    <color name="player_list_title_white">#ffffff</color>
+    <color name="player_list_title_grey">#969696</color>
+
+
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="red">#bb0000</color>
+
+    <!--
+        Material color swatches
+        The main color is always xxx500
+    -->
+    <color name="orange50">#fff3e0</color>
+    <color name="orange100">#ffdfae</color>
+    <color name="orange200">#ffca7d</color>
+    <color name="orange300">#ffb54c</color>
+    <color name="orange400">#ffa11a</color>
+    <color name="orange500">#FF8800</color>
+    <color name="orange600">#ff7d00</color>
+    <color name="orange700">#ff7200</color>
+    <color name="orange800">#ff610a</color>
+    <color name="orange900">#ff5014</color>
+
+    <color name="red500transparent">#b4ff0000</color>
+    <color name="orange500transparent">#b4ff8800</color>
+    <color name="orange500focus">#86ff8800</color>
+    <color name="orange200transparent">#64ffca7d</color>
+
+    <color name="green50">#bdeadd</color>
+    <color name="green100">#a7e3d1</color>
+    <color name="green200">#91dcc5</color>
+    <color name="green300">#7cd5ba</color>
+    <color name="green400">#66cfaf</color>
+    <color name="green500">#50c8a3</color>
+    <color name="green600">#47b99b</color>
+    <color name="green700">#3ea992</color>
+    <color name="green800">#359989</color>
+    <color name="green900">#2b8a81</color>
+
+    <color name="grey50">#fafafa</color>
+    <color name="grey100">#f5f5f5</color>
+    <color name="grey200">#eeeeee</color>
+    <color name="grey300">#e0e0e0</color>
+    <color name="grey400">#bdbdbd</color>
+    <color name="grey500">#9e9e9e</color>
+    <color name="grey600">#757575</color>
+    <color name="grey700">#616161</color>
+    <color name="grey800">#424242</color>
+    <color name="grey850">#323232</color>
+    <color name="grey875">#2a2a2a</color>
+    <color name="grey900">#212121</color>
+
+
+    <color name="dark_background">#131313</color>
+
+    <color name="playerbackground">#c0141414</color>
+    <color name="playerbackground_invert">#c0ebebeb</color>
+    <color name="black_more_transparent">#88000000</color>
+    <color name="status_bar_transparency">#cb000000</color>
+
+    <color name="grey200transparent">#33eeeeee</color>
+
+    <color name="whitetransparent_b9">#b9ffffff</color>
+    <color name="whitetransparent_ea">#eaffffff</color>
+
+    <color name="grey50transparent">#b9fafafa</color>
+    <color name="grey50transparent_ea">#eafafafa</color>
+    <color name="grey400transparent">#80bdbdbd</color>
+    <color name="grey600transparent">#80757575</color>
+    <color name="grey900transparent_bb">#bb212121</color>
+    <color name="grey900transparent_dd">#dd212121</color>
+    <color name="grey900transparent">#80212121</color>
+    <color name="grey200_transparent_20">#33eeeeee</color>
+
+    <color name="mini_player_dark">#121212</color>
+    <color name="mini_visualizer">#BF141414</color>
+
+    <color name="blacktransparent">#b4000000</color>
+    <color name="whitetransparent">#b4ffffff</color>
+    <color name="white_less_transparent">#ccffffff</color>
+    <color name="ripple_white">#44ffffff</color>
+    <color name="white_more_transparent">#33ffffff</color>
+    <color name="white_audio_player_transparent">#aaffffff</color>
+    <color name="black_audio_player_transparent">#ee2a2a2a</color>
+    <color name="transparent">#00000000</color>
+    <color name="white_transparent">#01FFFFFF</color>
+
+    <color name="white_transparent_10">#1affffff</color>
+    <color name="white_transparent_15">#26ffffff</color>
+    <color name="white_transparent_20">#33ffffff</color>
+    <color name="white_transparent_30">#4dffffff</color>
+    <color name="white_transparent_50">#80ffffff</color>
+    <color name="white_transparent_60">#99ffffff</color>
+    <color name="white_transparent_75">#bfffffff</color>
+    <color name="white_transparent_80">#ccffffff</color>
+    <color name="white_transparent_90">#E6ffffff</color>
+    <color name="white_transparent_95">#F2ffffff</color>
+
+    <color name="black_transparent_10">#1a000000</color>
+    <color name="black_transparent_20">#33000000</color>
+    <color name="black_transparent_30">#4d000000</color>
+    <color name="black_transparent_50">#80000000</color>
+    <color name="black_transparent_60">#99000000</color>
+    <color name="black_transparent_75">#BF000000</color>
+    <color name="black_transparent_80">#cc000000</color>
+    <color name="black_transparent_90">#E6000000</color>
+
+    <color name="orange_800_transparent_10">#1aff610a</color>
+    <color name="orange_800_transparent_20">#33ff610a</color>
+    <color name="orange_500_transparent_20">#33FF8800</color>
+
+    <color name="tv_bg">#34434e</color>
+    <color name="tv_card_content">#34434e</color>
+    <color name="tv_card_content_dark">#1a2c38</color>
+    <color name="tv_card_content_darker">#011422</color>
+
+    <!--test with onboarding colors-->
+    <!--<color name="tv_bg">#1c313a</color>-->
+    <!--<color name="tv_card_content">#396375</color>-->
+    <color name="onboarding_grey">#011422</color>
+    <color name="onboarding_grey_transparent_20">#33011422</color>
+    <color name="onboarding_grey_transparent_75">#BF011422</color>
+    <color name="material_blue">#2196f3</color>
+    <color name="material_pink">#e91e63</color>
+</resources>

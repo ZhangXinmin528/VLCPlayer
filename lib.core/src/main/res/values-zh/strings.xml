@@ -1,0 +1,4 @@
+<resources>
+    <string name="all_exit_tips">再次点击退出程序</string>
+    <string name="all_exception_unknown">未知异常</string>
+</resources>

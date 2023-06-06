@@ -1,0 +1,4 @@
+<resources>
+    <string name="all_exit_tips">Click again to exit the program</string>
+    <string name="all_exception_unknown">Unknown exception</string>
+</resources>

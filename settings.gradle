@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url 'https://pm.crm.cn:8083/repository/nexus-releases/'
+        }
+    }
+}
+rootProject.name = "TestMusic"
+include ':app'
+//include ':player'
+include ':lib.core'
+include ':lib.util'

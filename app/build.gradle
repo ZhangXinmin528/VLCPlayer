@@ -1,0 +1,83 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.nextos.testmusic'
+    compileSdkVersion build_versions.compile_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        applicationId "com.nextos.testmusic"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    signingConfigs {
+
+        def filePath = '../sign/keystore.jks'
+        def pwd = properties.getProperty("sign.pwd")
+        def alias = properties.getProperty("sign.alias")
+
+        release {
+            storeFile file(filePath)
+            storePassword pwd
+            keyAlias alias
+            keyPassword pwd
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.3.2'
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.8.0'
+//    implementation project(path: ':player')
+    implementation project(path: ':lib.util')
+    implementation project(path: ':lib.core')
+
+    implementation deps.media
+    implementation deps.lifecycle.service
+    implementation deps.preference.runtime
+    implementation deps.preference.ktx
+    implementation files('libs/com.nextos.player.1.0.1.1-release.aar')
+    implementation files('libs/libvlc-all-3.6.0-eap6.aar')
+}
