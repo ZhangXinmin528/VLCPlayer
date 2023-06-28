@@ -1,10 +1,12 @@
 package com.nextos.testmusic.ui
 
 import android.Manifest
+import android.content.ContentResolver
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Environment
 import android.os.Environment.DIRECTORY_DOWNLOADS
+import android.os.Environment.DIRECTORY_MUSIC
 import android.util.Log
 import android.view.View
 import android.view.View.OnClickListener
@@ -55,6 +57,10 @@ open class MainActivity : BaseActivity(), OnClickListener, PlaybackService.Callb
         PlaybackService.serviceFlow.onEach { onServiceChanged(it) }.launchIn(startedScope)
     }
 
+    private fun setOption() {
+
+    }
+
     open fun onServiceChanged(service: PlaybackService?) {
         if (service != null) {
             this.service = service
@@ -92,12 +98,30 @@ open class MainActivity : BaseActivity(), OnClickListener, PlaybackService.Callb
                     Toast.makeText(this, "权限未授予", Toast.LENGTH_SHORT).show()
                     return
                 }
-                val dir = Environment.getExternalStoragePublicDirectory(DIRECTORY_DOWNLOADS)
-                val songPath = File(dir, "手心的蔷薇.flac").absolutePath
+//                val dir = Environment.getExternalStoragePublicDirectory(DIRECTORY_DOWNLOADS)
+//                val songPath = File(dir, "f1_bass_41_43.ac3").absolutePath
+//                if (!FileUtils.isFileExists(songPath)) {
+//                    Toast.makeText(this, "歌曲不存在", Toast.LENGTH_SHORT).show()
+//                    return
+//                }
+//                val songUri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + packageName + "/raw/f1_bass_41_43.ac3")
+//                val songUri = Uri.parse("file:///android_asset//f1_bass_41_43.ac3")
+
+                //共享目录
+                val dir = Environment.getExternalStoragePublicDirectory(DIRECTORY_MUSIC)
+                val songPath = File(dir, "f1_bass_41_43.ac3").absolutePath
                 if (!FileUtils.isFileExists(songPath)) {
                     Toast.makeText(this, "歌曲不存在", Toast.LENGTH_SHORT).show()
                     return
                 }
+
+                //私有目录
+//                val dir = cacheDir
+//                val songPath = File(dir, "f1_bass_41_43.ac3").absolutePath
+//                if (!FileUtils.isFileExists(songPath)) {
+//                    Toast.makeText(this, "歌曲不存在", Toast.LENGTH_SHORT).show()
+//                    return
+//                }
                 val songUri = Uri.parse(songPath)
                 MediaUtils.openMediaNoUi(songUri)
 
@@ -142,8 +166,8 @@ open class MainActivity : BaseActivity(), OnClickListener, PlaybackService.Callb
 
     override fun onMediaPlayerEvent(event: org.videolan.libvlc.MediaPlayer.Event) {
         Log.d("zxm==", "onMediaPlayerEvent..event#type:${event.type}")
-        if (event.type == Event.EndReached){
-            Toast.makeText(this,"播放完毕", Toast.LENGTH_SHORT).show()
+        if (event.type == Event.EndReached) {
+            Toast.makeText(this, "播放完毕", Toast.LENGTH_SHORT).show()
         }
     }
 }

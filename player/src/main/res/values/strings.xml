@@ -1033,7 +1033,7 @@
 
 
     <!--    accessibility-->
-    <string name="player_talkback_media_content_description">%s - title: %s - duration: %s</string>
+    <string name="player_talkback_media_content_description" formatted="false">%s - title: %s - duration: %s</string>
     <string name="player_talkback_genre">Genre: %s</string>
     <string name="player_talkback_history_item">History item</string>
     <string name="player_talkback_playlist">Playlist: %s</string>
@@ -1061,7 +1061,7 @@
     <string name="player_talkback_audio_tracks">Audio tracks</string>
     <string name="player_talkback_subtitle_tracks">Subtitle tracks</string>
     <string name="player_talkback_track" translatable="false">%s: %s. %s</string>
-    <string name="player_talkback_subtitle_dowload_item">Language: %s. %s. Name: %s</string>
+    <string name="player_talkback_subtitle_dowload_item" formatted="false">Language: %s. %s. Name: %s</string>
     <string name="player_selected">Selected</string>
     <string name="player_talkback_increase_delay">Increase delay</string>
     <string name="player_talkback_decrease_delay">Decrease delay</string>
@@ -1073,8 +1073,8 @@
     <string name="player_talkback_audio_player_collapsed">Audio player collapsed</string>
     <string name="player_talkback_audio_player_closed">Audio player closed</string>
     <string name="player_talkback_audio_player">Audio player. Currently playing: %s</string>
-    <string name="player_talkback_out_of">%s out of %s</string>
-    <string name="player_talkback_track_index">Track %s out of %s</string>
+    <string name="player_talkback_out_of" formatted="false">%s out of %s</string>
+    <string name="player_talkback_track_index" formatted="false">Track %s out of %s</string>
     <string name="player_downloaded">Downloaded</string>
     <string name="player_not_downloaded">Not downloaded</string>
     <string name="player_downloading">Downloading</string>

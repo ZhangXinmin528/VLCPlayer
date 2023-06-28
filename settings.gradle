@@ -17,6 +17,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "TestMusic"
 include ':app'
-//include ':player'
+include ':player'
 include ':lib.core'
 include ':lib.util'
