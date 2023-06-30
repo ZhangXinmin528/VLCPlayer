@@ -1,8 +1,8 @@
 ext.deps = [:]
 def versions = [:]
 //classpath
-versions.android_gradle_plugin = '7.0.4'
-versions.kotlin = "1.5.20"
+versions.android_gradle_plugin = '7.0.2'
+versions.kotlin = "1.4.20"
 versions.arouter_register = "1.0.2"
 versions.bugly_tinker_support = "1.1.5"
 
@@ -32,7 +32,7 @@ versions.core_ktx = "1.7.0"
 versions.activity = '1.2.4'
 versions.fragment = "1.4.1"
 //coroutines
-versions.coroutines = "1.6.0"
+versions.coroutines = "1.4.1"
 //dagger
 versions.dagger = "2.16"
 //glide
