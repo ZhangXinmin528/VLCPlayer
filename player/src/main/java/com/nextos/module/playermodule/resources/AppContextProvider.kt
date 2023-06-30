@@ -24,6 +24,7 @@
 
 package com.nextos.module.playermodule.resources
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
 import android.content.ContextWrapper
@@ -31,6 +32,7 @@ import android.content.res.Resources
 import com.nextos.module.playermodule.tools.wrap
 import java.lang.reflect.InvocationTargetException
 
+@SuppressLint("StaticFieldLeak")
 object AppContextProvider {
 
     private lateinit var context: Context
@@ -44,6 +46,7 @@ object AppContextProvider {
     }
 
     val appContext: Context
+        @SuppressLint("StaticFieldLeak")
         get() {
             return if (::context.isInitialized) context
             else {

@@ -1,8 +1,5 @@
-plugins {
-    id 'com.android.library'
-    id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
-}
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
     namespace 'com.nextos.module.playermodule'
@@ -46,7 +43,7 @@ dependencies {
     implementation deps.lifecycle.process
 
     api deps.glide.runtime
-    kapt deps.glide.compiler
+    annotationProcessor deps.glide.compiler
 
     implementation "androidx.window:window:1.0.0"
 

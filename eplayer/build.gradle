@@ -1,0 +1,47 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.nextos.eplayer'
+    compileSdkVersion build_versions.compile_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0.2"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    android.libraryVariants.all { variant ->
+        variant.outputs.all {
+            def fileName = "player.${defaultConfig.versionName}.${defaultConfig.versionCode}-${buildType.name}.aar"
+            outputFileName = fileName
+        }
+    }
+//    kotlinOptions {
+//        jvmTarget = '1.8'
+//    }
+}
+
+dependencies {
+    implementation deps.app_compat
+    implementation deps.preference.runtime
+    implementation deps.preference.ktx
+    implementation "com.nextos.vlc:libvlc-all:ywxt.1.0.3-eap1"
+}

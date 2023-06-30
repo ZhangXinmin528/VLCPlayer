@@ -36,8 +36,6 @@ object MediaUtils {
         SuspendDialogCallback(context) { service -> service.loadLastPlaylist(type) }
     }
 
-
-
     fun openMedia(context: Context?, media: MediaWrapper?) {
         if (media == null || context == null) return
         SuspendDialogCallback(context) { service -> service.load(media) }
@@ -219,19 +217,21 @@ object MediaUtils {
         }
     }
 
-    fun retrieveMediaTitle(mw: MediaWrapper) = try {
-        AppContextProvider.appContext.contentResolver.query(mw.uri, null, null, null, null)?.use {
-            val nameIndex = it.getColumnIndex(OpenableColumns.DISPLAY_NAME)
-            if (nameIndex > -1 && it.count > 0) {
-                it.moveToFirst()
-                if (!it.isNull(nameIndex)) mw.title = it.getString(nameIndex)
+    fun retrieveMediaTitle(mw: MediaWrapper): Unit? {
+        return try {
+            AppContextProvider.appContext.contentResolver.query(mw.uri, null, null, null, null)?.use {
+                val nameIndex = it.getColumnIndex(OpenableColumns.DISPLAY_NAME)
+                if (nameIndex > -1 && it.count > 0) {
+                    it.moveToFirst()
+                    if (!it.isNull(nameIndex)) mw.title = it.getString(nameIndex)
+                }
             }
-        }
-    } catch (ignored: UnsupportedOperationException) {
-    } catch (ignored: IllegalArgumentException) {
-    } catch (ignored: NullPointerException) {
-    } catch (ignored: IllegalStateException) {
-    } catch (ignored: SecurityException) {}
+        } catch (ignored: UnsupportedOperationException) {
+        } catch (ignored: IllegalArgumentException) {
+        } catch (ignored: NullPointerException) {
+        } catch (ignored: IllegalStateException) {
+        } catch (ignored: SecurityException) {}
+    }
 
     fun deletePlaylist(playlist: Playlist) = AppScope.launch(Dispatchers.IO) { playlist.delete() }
 

@@ -145,10 +145,10 @@ class PlaybackService : MediaBrowserServiceCompat(), LifecycleOwner, CoroutineSc
     private lateinit var keyguardManager: KeyguardManager
     internal lateinit var settings: SharedPreferences
     private val binder = LocalBinder()
-//    private lateinit var artworkMap: MutableMap<String, Uri>
 
     private val callbacks = mutableListOf<Callback>()
     private val subtitleMessage = ArrayDeque<String>(1)
+
     private lateinit var cbActor: SendChannel<CbAction>
     var detectHeadset = true
     var headsetInserted = false
@@ -283,6 +283,7 @@ class PlaybackService : MediaBrowserServiceCompat(), LifecycleOwner, CoroutineSc
 
             MediaPlayer.Event.EndReached -> mediaEndReached = true
         }
+        Log.d("zxm==", "PlaybackService..mediaPlayerListener..onEvent()..type:${event.type}")
         cbActor.trySend(CbMediaPlayerEvent(event))
     }
 
@@ -605,10 +606,10 @@ class PlaybackService : MediaBrowserServiceCompat(), LifecycleOwner, CoroutineSc
                 if (!this::mediaSession.isInitialized) initMediaSession()
                 intent.getBundleExtra(EXTRA_SEARCH_BUNDLE)?.let {
                     mediaSession.controller.transportControls.playFromSearch(
-                            it.getString(
-                                SearchManager.QUERY
-                            ), it
-                        )
+                        it.getString(
+                            SearchManager.QUERY
+                        ), it
+                    )
                 }
             }
 
@@ -1165,17 +1166,17 @@ class PlaybackService : MediaBrowserServiceCompat(), LifecycleOwner, CoroutineSc
         if (isVideoPlaying) return
         if (lifecycleScope.isActive) lifecycleScope.launch(Dispatchers.Default) {
             sendBroadcast(Intent("com.android.music.metachanged").putExtra(
-                    "track",
-                    media?.nowPlaying ?: media?.title
-                ).putExtra(
-                    "artist", if (media != null) MediaUtils.getMediaArtist(
-                        this@PlaybackService, media
-                    ) else null
-                ).putExtra(
-                    "album", if (media != null) MediaUtils.getMediaAlbum(
-                        this@PlaybackService, media
-                    ) else null
-                ).putExtra("duration", media?.length ?: 0).putExtra("playing", isPlaying)
+                "track",
+                media?.nowPlaying ?: media?.title
+            ).putExtra(
+                "artist", if (media != null) MediaUtils.getMediaArtist(
+                    this@PlaybackService, media
+                ) else null
+            ).putExtra(
+                "album", if (media != null) MediaUtils.getMediaAlbum(
+                    this@PlaybackService, media
+                ) else null
+            ).putExtra("duration", media?.length ?: 0).putExtra("playing", isPlaying)
                 .putExtra("package", "org.videolan.vlc").apply {
                     if (lastChaptersCount > 0) getCurrentChapter()?.let {
                         putExtra(

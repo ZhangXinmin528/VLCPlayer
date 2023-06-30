@@ -1,7 +1,5 @@
-plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
-}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
     namespace 'com.nextos.testmusic'
@@ -65,12 +63,13 @@ android {
         }
     }
 
+
 }
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation project(path: ':player')
+    implementation deps.core_ktx
+
     implementation project(path: ':lib.util')
     implementation project(path: ':lib.core')
 
@@ -78,8 +77,17 @@ dependencies {
     implementation deps.lifecycle.service
     implementation deps.preference.runtime
     implementation deps.preference.ktx
-    implementation files('libs/com.nextos.player.1.0.1.1-release.aar')
+    implementation "com.nextos.vlc:libvlc-all:ywxt.1.0.3-eap1"
+
+    //player
+        implementation project(path: ':player')
+    //eplayer
+//    implementation project(path: ':eplayer')
+
+
+//    implementation files('libs/com.nextos.player.1.0.1.1-release.aar')
 //    implementation files('libs/libvlc-all-ywxt.1.0.3-eap1.aar')
-    implementation files('libs/libvlc-armv8-3.5.2-eap1.aar')
+//    implementation files('libs/libvlc-armv8-3.5.2-eap1.aar')
 //    implementation("org.videolan.android:libvlc-all:3.6.0-eap8")
+
 }

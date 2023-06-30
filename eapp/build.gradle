@@ -1,0 +1,84 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.nextos.eapp'
+    compileSdkVersion build_versions.compile_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        applicationId "com.nextos.eapp"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    signingConfigs {
+
+        def filePath = '../sign/keystore.jks'
+        def pwd = properties.getProperty("sign.pwd")
+        def alias = properties.getProperty("sign.alias")
+
+        release {
+            storeFile file(filePath)
+            storePassword pwd
+            keyAlias alias
+            keyPassword pwd
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+
+    implementation deps.core_ktx
+
+    implementation project(path: ':lib.util')
+    implementation project(path: ':lib.core')
+
+    implementation deps.media
+    implementation deps.lifecycle.service
+    implementation deps.preference.runtime
+    implementation deps.preference.ktx
+
+    implementation "com.nextos.vlc:libvlc-all:ywxt.1.0.3-eap1"
+    implementation project(path: ':eplayer')
+}

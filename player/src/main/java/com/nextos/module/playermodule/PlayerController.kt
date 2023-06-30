@@ -3,6 +3,7 @@ package com.nextos.module.playermodule
 import android.content.Context
 import android.net.Uri
 import android.support.v4.media.session.PlaybackStateCompat
+import android.util.Log
 import android.widget.Toast
 import androidx.annotation.MainThread
 import androidx.core.net.toUri
@@ -142,7 +143,7 @@ class PlayerController(val context: Context) : IVLCVout.Callback, MediaPlayer.Ev
         if (!mediaplayer.isReleased && mediaplayer.hasMedia()) mediaplayer.getVideoTracksCount() else 0
 
 
-       fun setAudioDigitalOutputEnabled(enabled: Boolean) =
+    fun setAudioDigitalOutputEnabled(enabled: Boolean) =
         !mediaplayer.isReleased && mediaplayer.setAudioDigitalOutputEnabled(enabled)
 
     fun getAudioDelay() =
@@ -345,6 +346,7 @@ class PlayerController(val context: Context) : IVLCVout.Callback, MediaPlayer.Ev
     }
 
     override fun onEvent(event: MediaPlayer.Event?) {
+        Log.d("zxm==", "PlayerController....onEvent()..type:${event?.type}")
         if (event != null) eventActor.trySend(event)
     }
 

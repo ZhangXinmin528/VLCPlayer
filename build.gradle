@@ -1,10 +1,45 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-plugins {
-    id 'com.android.application' version '8.0.1' apply false
-    id 'com.android.library' version '8.0.1' apply false
-    id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
+buildscript {
+    apply from: 'versions.gradle'
+
+    addRepos(repositories)
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:$versions.android_gradle_plugin"
+        classpath deps.kotlin.plugin
+
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+
+    }
 }
-apply from: 'versions.gradle'
+
+allprojects {
+    addRepos(repositories)
+
+}
+
+subprojects {
+
+    configurations.all {
+        resolutionStrategy {
+            force "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.4.1",
+                    "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1",
+                    "org.jetbrains.kotlin:kotlin-stdlib:1.4.20",
+                    "org.jetbrains.kotlin:kotlin-stdlib-common:1.4.20",
+                    "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.20",
+                    "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.20",
+                    "org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.4.20"
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    repo_config = ["use_local": true]
+
+}
 ext {
     appId = "org.videolan.vlc"
 }

@@ -15,9 +15,7 @@
 
     <application
         android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:supportsRtl="true"
-        tools:remove="android:appComponentFactory">
+        android:supportsRtl="true">
 
         <service
             android:name=".service.PlaybackService"
